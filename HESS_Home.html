@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website with Header</title>
+  <style>
+    body {
+        margin: 0;
+        font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    header {
+        position: fixed;
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        width: 100%;
+        box-sizing: border-box; 
+        min-width: 0;           
+        overflow-x: auto;
+        background-color: #5D3A74;
+    }
+    /*background-color: #1E6091 */
+    .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        font-family: 'Georgia', serif;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 2rem;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    section {
+        color: white;
+    }
+
+    .section-1,
+    .section-2,
+    .three-image-section {
+        padding-top: 100px;
+    }
+    .section-1 h1 {
+    margin-top: 0.5em !important; /* or even 0 */
+  }
+    .section-1 {
+        background-color: #E9DBF8;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 40vh;
+        padding: 0 2rem;
+        box-sizing: border-box;
+    }
+
+    .section-3 {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+        padding: 0 2rem;
+        box-sizing: border-box;
+    }
+
+    .section-4 {
+        background-color: #924ac2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 25vh;
+        padding: 0 2rem;
+        box-sizing: border-box;
+    }
+    .section-5 {
+        background-color: #924ac2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 25vh;
+        padding: 0 2rem;
+        box-sizing: border-box;
+    }
+
+    .section-2 {
+        position: relative;
+        background: url('./Images/NYUSquareP.png') center center/cover no-repeat;
+        padding: 5rem 2rem;
+        color: white;
+        text-align: center;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(0, 0, 0, 0.35);
+        z-index: 1;
+    }
+
+    .section-2-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: 7rem;
+        font-weight: 900;
+        line-height: 1.1;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .section-2-content p {
+        margin-top: 1.5rem;
+        font-size: 1.2rem;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .three-image-section {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        height: 60vh;
+    }
+
+    .image-container {
+        flex: 1 1 calc(33.333% - 20px);
+        text-align: center;
+        max-height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .image-container img {
+        width: auto;
+        max-width: 100%;
+        max-height: 140px;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .image-container a:hover img {
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+        .image-container {
+            flex: 1 1 100%;
+        }
+    }
+
+    .image-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .image-wrapper img {
+        width: 100%;
+        max-width: 320px;
+        max-height: 260px;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .image-center-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+        color: white;
+        font-family: 'Montserrat';
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+        pointer-events: none;
+        width: 90%;
+        text-align: center;
+        z-index: 2;
+    }
+
+    .image-bar-svg {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 90%;
+        height: 48px;
+        z-index: 3;
+    }
+
+    .clickable-bar {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 90%;
+        height: 48px;
+        z-index: 3;
+        cursor: pointer;
+        transition: 
+            width 0.2s cubic-bezier(.4,2,.6,1),
+            box-shadow 0.2s,
+            filter 0.2s;
+        box-shadow: 0 2px 8px rgba(30,96,145,0.08);
+        opacity: 0.98;
+    }
+
+    .clickable-bar:hover {
+        width: 98%;
+        filter: brightness(0.97);
+        box-shadow: 0 4px 16px rgba(30,96,145,0.15);
+        opacity: 1;
+    }
+
+    .slideshow-full-section {
+        width: 100vw;
+        height: 60vh;
+        overflow: hidden;
+        background: #222;
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    .slideshow-full-slider {
+        display: flex;
+        height: 150vh;
+        transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+        will-change: transform;
+    }
+
+    .slide-full-img {
+        width: 100vw;
+        height: 60vh;
+        object-fit: cover;
+        flex-shrink: 0;
+        display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="./Images/HESSLogo-removebg.png" alt="HESS Logo" style="height: 2rem; vertical-align: middle; margin-right: 0.5rem; position: relative; top: -4px;">
+      HESS
+    </div>
+    <nav>
+      <a href="HESS_Home.html">Home</a>
+      <a href="HESS_About.html">About</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdO8HOEf_o7xMXaeKWzZ2MkYaV4oHs0OdQF7Ml3HGzqw90yog/viewform?usp=sharing&ouid=101656468212074637434" target="_blank">Join</a>      <a href="HESS_Team.html">Team</a>
+      <a href="HESS_Contact.html">Contact</a>
+      <a href="https://www.instagram.com/hess.nyu/"> HESSplore</a>
+    </nav>
+  </header>
+  <main>
+
+    <section class="section-2">
+      <div class="overlay"></div>
+      <div class="section-2-content">
+        <h2 class="hero-title">WHERE INNOVATION MEETS EXCELLENCE</h2>
+      </div>
+    </section>
+
+    <section class="section-1">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: bold; text-align: center; margin-bottom: 0.01em; color: rgb(98, 85, 188);">
+        Welcome to the Hemmes Engineering and Science Society
+      </h1>
+      <p style="font-family: 'Montserrat', sans-serif; line-height: 2; color: rgb(136, 136, 136);">
+        The official club of NYU-CAS dual degree program between the College of Arts and Science and the Tandon School of Engineering. 
+        The future of the future, a community open to all disciplines interested in the intersection between disciplines. Named in honor of Joe Hemmes, a transfer advisor and founder of NYU's 
+        dual degree program in the 1980's who unforunately passed away in 2009, our club lives on to carry his legacy and help others interested in a dual degree make their own path in this world.
+      </p>
+    </section>
+
+    <section class="three-image-section">
+      <h1 style="font-family: 'Montserrat', Arial, sans-serif; font-size: 2rem; font-weight: bold; text-align: center; margin-bottom: 0.5em; color: rgb(98, 85, 188); width: 100%;">
+        How to get involved
+      </h1>
+      <!-- Repeatable image blocks -->
+      <div class="image-container">
+        <div class="image-wrapper">
+          <img src="./Images/ManhattanNYC.jpg" alt="NYU Logo">
+          <div class="image-bar-svg clickable-bar" onclick="window.location.href='HESS_About.html'">
+            <svg viewBox="0 0 320 48" width="100%" height="48" style="display:block;">
+              <defs>
+                <mask id="cutout-text-mask-1">
+                  <rect width="100%" height="100%" fill="white"/>
+                  <text x="50%" y="60%" text-anchor="middle" fill="black" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="700">
+                    About
+                  </text>
+                </mask>
+              </defs>
+              <rect width="100%" height="100%" fill="white" fill-opacity="0.95" mask="url(#cutout-text-mask-1)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-container">
+        <div class="image-wrapper">
+          <img src="./Images/NYUNYC.jpg" alt="NYU Logo">
+          <div class="image-bar-svg clickable-bar" onclick="window.location.href= 'https://docs.google.com/forms/d/e/1FAIpQLSdO8HOEf_o7xMXaeKWzZ2MkYaV4oHs0OdQF7Ml3HGzqw90yog/viewform?usp=sharing&ouid=101656468212074637434'">
+            <svg viewBox="0 0 320 48" width="100%" height="48" style="display:block;">
+              <defs>
+                <mask id="cutout-text-mask-2">
+                  <rect width="100%" height="100%" fill="white"/>
+                  <text x="50%" y="60%" text-anchor="middle" fill="black" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="700">
+                    Join
+                  </text>
+                </mask>
+              </defs>
+              <rect width="100%" height="100%" fill="white" fill-opacity="0.95" mask="url(#cutout-text-mask-2)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-container">
+        <div class="image-wrapper">
+          <img src="./Images/BrooklynNYC1.png" alt="NYU Logo">
+          <div class="image-bar-svg clickable-bar" onclick="window.location.href='HESS_Contact.html'">
+            <svg viewBox="0 0 320 48" width="100%" height="48" style="display:block;">
+              <defs>
+                <mask id="cutout-text-mask-3">
+                  <rect width="100%" height="100%" fill="white"/>
+                  <text x="50%" y="60%" text-anchor="middle" fill="black" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="700">
+                    Contact
+                  </text>
+                </mask>
+              </defs>
+              <rect width="100%" height="100%" fill="white" fill-opacity="0.95" mask="url(#cutout-text-mask-3)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slideshow-full-section">
+    <div class="slideshow-full-slider" id="slider">
+        <img class="slide-full-img" src="./Images/CityLandscape.png" alt="Slide 1">
+        <img class="slide-full-img" src="./Images/clubfest.png" alt="Slide 2">
+        <img class="slide-full-img" src="./Images/NYUSquare.png" alt="Slide 3">
+    </div>
+    </section>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.getElementById("slider");
+    const slides = slider.querySelectorAll(".slide-full-img");
+    const slideCount = slides.length;
+    let currentSlide = 0;
+    let isTransitioning = false;
+
+    // Clone the first slide and append it to the end
+    const firstClone = slides[0].cloneNode(true);
+    slider.appendChild(firstClone);
+
+    // Set the width of the slider
+    slider.style.width = ((slideCount + 1) * 100) + "vw";
+
+    function showSlide(idx, animate = true) {
+        if (animate) {
+        slider.style.transition = "transform 0.7s cubic-bezier(.77,0,.18,1)";
+        } else {
+        slider.style.transition = "none";
+        }
+        slider.style.transform = `translateX(-${idx * 100}vw)`;
+    }
+
+    showSlide(currentSlide);
+
+    setInterval(() => {
+        if (isTransitioning) return;
+        currentSlide++;
+        showSlide(currentSlide);
+
+        // If we've reached the clone, reset after transition
+        if (currentSlide === slideCount) {
+        isTransitioning = true;
+        setTimeout(() => {
+            showSlide(0, false); // Instantly jump to the real first slide
+            currentSlide = 0;
+            isTransitioning = false;
+        }, 700); // Match the transition duration
+        }
+    }, 2500);
+    });
+    </script>
+  <section class="section-3">
+
+  </section>
+   <section class="section-1">
+    <h1 style="font-family: 'Montserrat', Arial, sans-serif; font-size: 2rem; font-weight: bold; text-align: center; margin-top: 0.01em; color: rgb(98, 85, 188);">
+      Join us in shaping the future
+    </h1>
+    <p style="font-family: 'Montserrat', Arial, sans-serif; line-height: 2; color: rgb(136, 136, 136);">
+      Whether you're an engineer, scientist, or simply curious about the intersection of disciplines, HESS is the place for you.
+      Join us to explore new ideas, collaborate on projects, and make a difference.
+    </p>
+  </section> 
+
+  <section class="section-5">
+  <h1 style="
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+    margin: 0 0 1em 0;
+    color: rgb(62, 37, 85);
+    letter-spacing: 0.03em;
+  ">
+    Contact:
+  </h1>
+  <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 2em;">
+    <a href="https://www.instagram.com/hess.nyu/" target="_blank" style="font-family: 'Montserrat', Arial, sans-serif; color: #ffffff; text-decoration: none; font-size: 1rem; font-weight: 500;">
+      Instagram
+    </a>
+    <a href="HESS_Contact.html" style="font-family: 'Montserrat', Arial, sans-serif; color: #ffffff; text-decoration: none; font-size: 1rem; font-weight: 500;">
+      Contact Form
+    </a>
+    <a href="https://cas.nyu.edu/engineering/undergraduate-program.html" target="_blank" style="font-family: 'Montserrat', Arial, sans-serif; color: #ffffff; text-decoration: none; font-size: 1rem; font-weight: 500;">
+      Dual Degree Program
+    </a>
+  </div>
+</section>
+  </main>
+  
+</body>
+</html>
+

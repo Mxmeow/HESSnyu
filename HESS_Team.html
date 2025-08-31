@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --nyu-violet:#5D3A74;
+            --nyu-grey: #898c8e;
+            --light-grey: #f4f4f4;
+            --white: #ffffff;
+            --dark-text: #333333;
+        }
+
+        body {
+            background-color: var(--light-grey);
+            color: var(--dark-text);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: var(--nyu-violet);
+            color: var(--white);
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 1.5px;
+        }
+
+        main {
+            padding: 0 20px 40px;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .team-member-card {
+            background-color: var(--white);
+            color: var(--dark-text);
+            border-radius: 15px;
+            padding: 25px;
+            width: 280px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .team-member-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--nyu-violet);
+            margin-bottom: 20px;
+        }
+
+        .team-member-card h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+
+        .team-member-card p {
+            color: var(--nyu-grey);
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Team</h1>
+    </header>
+    <main>
+        <div class="team-container">
+            <div class="team-member-card">
+                <img src="./Images/team-member-1.jpg" alt="Team Member 1">
+                <h2>Muhammad Zain Naveed</h2>
+                <p>President</p>
+            </div>
+            <div class="team-member-card">
+                <img src="./Images/team-member-2.jpg" alt="Team Member 2">
+                <h2>Lucas Caceres</h2>
+                <p>Vice President</p>
+            </div>
+            <div class="team-member-card">
+                <img src="./Images/team-member-3.jpg" alt="Team Member 3">
+                <h2>Shahzad Awan</h2>
+                <p>Treasurer</p>
+            </div>
+            <div class="team-member-card">
+                <img src="./Images/team-member-4.jpg" alt="Team Member 3">
+                <h2>Shahriza Mashafi </h2>
+                <p>Administrative Secretary</p>
+            </div>
+            <div class="team-member-card">
+                <img src="./Images/team-member-5.jpg" alt="Team Member 3">
+                <h2>Siddhartha Somadder</h2>
+                <p>Public Relations Secretary</p>
+            </div>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

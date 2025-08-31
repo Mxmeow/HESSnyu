@@ -1,0 +1,276 @@
+<html><head><base href=""><title>Contact Us | Modern Tech Design</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+      background: #5D3A74;
+      min-height: 100vh;
+      padding: 2rem;
+      color: #e0e0e0;
+  }
+  
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: #441f56;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      border: 1px solid rgba(167, 66, 225, 0.2);
+  }
+  
+  .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+  }
+  
+  .contact-info {
+      padding: 2rem;
+      position: relative;
+  }
+  
+  .contact-info::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, #9c42e1, transparent);
+  }
+  
+  .contact-info h1 {
+      font-size: 2.5rem;
+      color: #a942e1;
+      margin-bottom: 1.5rem;
+  }
+  
+  .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: rgba(145, 66, 225, 0.1);
+      border-radius: 10px;
+      border: 1px solid rgba(66, 153, 225, 0.2);
+      transition: transform 0.3s ease;
+  }
+  
+  .info-item:hover {
+      transform: translateX(10px);
+      background: rgba(66, 153, 225, 0.15);
+  }
+  
+  .info-item svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 1rem;
+      fill: #ac42e1;
+  }
+  
+  .contact-form {
+      padding: 2rem;
+  }
+  
+  .form-group {
+      margin-bottom: 1.5rem;
+  }
+  
+  label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #b742e1;
+      font-weight: 500;
+  }
+  
+  input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      background: rgba(15, 25, 36, 0.8);
+      border: 2px solid rgba(66, 153, 225, 0.3);
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #e0e0e0;
+      transition: all 0.3s ease;
+  }
+  
+  input:focus, textarea:focus {
+      outline: none;
+      border-color: #ac42e1;
+      box-shadow: 0 0 15px rgba(66, 153, 225, 0.2);
+  }
+  
+  button {
+      background: linear-gradient(135deg, #be42e1 0%, #8731ce 100%);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+  }
+  
+  button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(66, 153, 225, 0.4);
+  }
+  
+  button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      transform: rotate(45deg);
+      animation: shine 3s infinite;
+  }
+  
+  @keyframes shine {
+      0% {
+          transform: translateX(-100%) rotate(45deg);
+      }
+      100% {
+          transform: translateX(100%) rotate(45deg);
+      }
+  }
+  
+  .success-message {
+      display: none;
+      background: rgba(56, 178, 172, 0.9);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      backdrop-filter: blur(5px);
+  }
+  
+  @media (max-width: 768px) {
+      .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+      }
+      .contact-info::after {
+          display: none;
+      }
+  }
+  
+  .pulse {
+      animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+      0% {
+          transform: scale(1);
+      }
+      50% {
+          transform: scale(1.05);
+      }
+      100% {
+          transform: scale(1);
+      }
+  }
+  </style>
+  </head>
+  <body>
+      <div class="container">
+          <div class="contact-grid">
+              <div class="contact-info">
+                  <h1>Get in Touch</h1>
+                  <div class="info-item">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                      </svg>
+                      <p>New York University, Tandon & College of arts and science</p>
+                  </div>
+                  <div class="info-item">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                      </svg>
+                      <p>Nyuhess@gmail.com
+                      </p>
+                  </div>
+                  <div class="info-item">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                      </svg>
+                      <p>+1 917-530-1463, +1 646-290-1209</p>
+                  </div>
+              </div>
+              <div class="contact-form">
+                  <form id="contactForm">
+                      <div class="form-group">
+                          <label for="name">Name</label>
+                          <input type="text" id="name" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="email">Email</label>
+                          <input type="email" id="email" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="message">Message</label>
+                          <textarea id="message" rows="5" required></textarea>
+                      </div>
+                      <button type="submit" class="pulse">Send Message</button>
+                      <div class="success-message" id="successMessage">
+                          Message sent successfully! We'll get back to you soon.
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  
+      <script>
+          document.getElementById('contactForm').addEventListener('submit', function(e) {
+              e.preventDefault();
+              
+              // In a real application, you would send the form data to a server here
+              // For this example, we'll just show the success message
+              const successMessage = document.getElementById('successMessage');
+              successMessage.style.display = 'block';
+              
+              // Clear the form
+              this.reset();
+              
+              // Hide the success message after 5 seconds
+              setTimeout(() => {
+                  successMessage.style.display = 'none';
+              }, 5000);
+          });
+  
+          // Add focus animations to inputs
+          const inputs = document.querySelectorAll('input, textarea');
+          inputs.forEach(input => {
+              input.addEventListener('focus', function() {
+                  this.parentElement.style.transform = 'translateY(-5px)';
+                  this.parentElement.style.transition = 'transform 0.3s ease';
+              });
+              
+              input.addEventListener('blur', function() {
+                  this.parentElement.style.transform = 'translateY(0)';
+              });
+          });
+      </script>
+  </body></html>
+<body>
+  <br>
+  <!-- Back Button -->
+  <button class="back-button" onclick="goBack()">⬅</button>
+  <div class="back-button-text"></div>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>
